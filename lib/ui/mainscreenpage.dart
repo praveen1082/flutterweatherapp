@@ -39,7 +39,7 @@ class MainPageScreen extends StatelessWidget {
               ],
             ),
             Constants.divider,
-            Constants.horizontalspace,
+            // Constants.horizontalspace,
             Row(
               children: [
                 Constants.verticalspace,
@@ -48,7 +48,7 @@ class MainPageScreen extends StatelessWidget {
                     height: Constants.weathericoncontainerheight,
                     child: Center(
                       child: Image.network(
-                          "https://www.pngall.com/wp-content/uploads/2016/03/Cloud-PNG-9.png",
+                          "https://www.shareicon.net/data/512x512/2016/08/01/640233_cloud_512x512.png",
                           fit: BoxFit.contain),
                     ),
                   ),
@@ -67,14 +67,28 @@ class MainPageScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          "28\u{00B0} C",
+                          "28\u{00B0}C",
                           style: TextStyle(
-                              fontSize: 36.0,
+                              fontSize: 34.0,
                               fontWeight: Constants.mainpagetitlefontweight),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          "Cloudy",
+                          style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: Constants.mainpagetitlefontweight),
+                        ),
+                        SizedBox(
+                          height: 5,
                         ),
                         Text(
                           "Kathmandu, Nepal",
-                          style: TextStyle(fontSize: 16.0),
+                          style: TextStyle(
+                              fontSize: 20.0,
+                              fontWeight: Constants.mainpagetitlefontweight),
                         ),
                       ],
                     ),
