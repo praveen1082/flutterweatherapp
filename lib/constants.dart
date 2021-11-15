@@ -22,4 +22,5 @@ class Constants {
   static const mainpagetitlefontweight = FontWeight.w500;
   static const refreshiconsize = 30.0;
   static const divider = Divider();
+  static const weathericoncontainerheight = 120.0;
 }
