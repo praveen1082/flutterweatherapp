@@ -65,7 +65,7 @@ class MainPageScreen extends StatelessWidget {
                     height: 100,
                     //color: Colors.amberAccent,
                     child: Column(
-                      children: [
+                      children: const [
                         Text(
                           "28\u{00B0}C",
                           style: TextStyle(
@@ -96,7 +96,17 @@ class MainPageScreen extends StatelessWidget {
                 ),
                 Constants.verticalspace,
               ],
-            )
+            ),
+            Constants.horizontalspace,
+            Row(children: [
+              Constants.verticalspace,
+              Expanded(
+                  child: Container(
+                height: 190,
+                color: Colors.red,
+              )),
+              Constants.verticalspace,
+            ])
           ],
         ),
       ),
