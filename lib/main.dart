@@ -17,12 +17,29 @@ class WeatherApp extends StatelessWidget {
 }
 
 class MainPageScreen extends StatelessWidget {
+  const MainPageScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Text("Hello world"),
+      backgroundColor: Constants.scaffoldcolor,
+      body: Container(decoration: Constants.scaffoldcontainerdecoration),
     ));
-    throw UnimplementedError();
   }
+}
+
+class Constants {
+  static const scaffoldcolor = Colors.white70;
+  static const scaffoldlineargradientcolors = [
+    Colors.blue,
+    Colors.orangeAccent
+  ];
+  static const scaffoldcontainerdecoration = BoxDecoration(
+    gradient: LinearGradient(
+      colors: scaffoldlineargradientcolors,
+      begin: Alignment.bottomRight,
+      end: Alignment.topLeft,
+    ),
+  );
 }
