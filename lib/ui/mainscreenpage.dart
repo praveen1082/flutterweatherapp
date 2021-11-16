@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:weatherapp/constants.dart';
 
 class MainPageScreen extends StatelessWidget {
-  const MainPageScreen({Key? key}) : super(key: key);
+  MainPageScreen({Key? key}) : super(key: key);
+  List<String> days = [
+    "Today",
+    "Tomorrow",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -98,31 +106,67 @@ class MainPageScreen extends StatelessWidget {
               ],
             ),
             Constants.horizontalspace,
-            Row(children: [
-              Constants.verticalspace,
-              Column(
-                children: [
+
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black54),
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                height: 180,
+                child: Row(children: [
                   Constants.verticalspace,
-                  Text(""),
-                  Text("11:00Am"),
-                  Text("11:00Am"),
-                  Text("11:00Am"),
-                  Text("11:00Am"),
-                  Text("11:00Am"),
-                  Text("11:00Am"),
-                  Text("11:00Am"),
-                ],
+                  Expanded(
+                    child: Column(
+                      children: [
+                        //Constants.verticalspace,
+                        Text(""),
+                        Divider(),
+                        Text("11:00Am"),
+                        Constants.horizontalspace,
+                        Text("11:00Am"),
+                        Constants.horizontalspace,
+                        Text("11:00Am"),
+                        Constants.horizontalspace,
+                        Text("11:00Am"),
+                        Constants.horizontalspace,
+                        Text("11:00Am"),
+                        Constants.horizontalspace,
+                        Text("11:00Am"),
+                        Constants.horizontalspace,
+                        Text("11:00Am"),
+                        Constants.horizontalspace,
+                      ],
+                    ),
+                  ),
+                  VerticalDivider(),
+                  Expanded(
+                    child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      scrollDirection: Axis.horizontal,
+                      // shrinkWrap: true,
+                      itemCount: days.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          children: [
+                            Text(days[index]),
+                            Text("11:00Am"),
+                            Text("11:00Am"),
+                            Text("11:00Am"),
+                            Text("11:00Am"),
+                            Text("11:00Am"),
+                            Text("11:00Am"),
+                            Text("11:00Am"),
+                          ],
+                        );
+                      },
+                    ),
+                  ),
+                  Constants.verticalspace,
+                ]),
               ),
-              ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 2,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [Text("Sunday")],
-                    );
-                  }),
-              Constants.verticalspace,
-            ])
+            )
           ],
         ),
       ),
