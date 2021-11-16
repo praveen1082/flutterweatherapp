@@ -23,4 +23,6 @@ class Constants {
   static const refreshiconsize = 30.0;
   static const divider = Divider();
   static const weathericoncontainerheight = 120.0;
+  static const degreetextfontsize = 34.0;
+  static const subtextsbelowdegreefontsize = 20.0;
 }

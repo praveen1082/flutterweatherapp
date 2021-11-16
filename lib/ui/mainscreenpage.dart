@@ -69,7 +69,7 @@ class MainPageScreen extends StatelessWidget {
                         Text(
                           "28\u{00B0}C",
                           style: TextStyle(
-                              fontSize: 34.0,
+                              fontSize: Constants.degreetextfontsize,
                               fontWeight: Constants.mainpagetitlefontweight),
                         ),
                         SizedBox(
@@ -78,7 +78,7 @@ class MainPageScreen extends StatelessWidget {
                         Text(
                           "Cloudy",
                           style: TextStyle(
-                              fontSize: 20.0,
+                              fontSize: Constants.subtextsbelowdegreefontsize,
                               fontWeight: Constants.mainpagetitlefontweight),
                         ),
                         SizedBox(
@@ -87,7 +87,7 @@ class MainPageScreen extends StatelessWidget {
                         Text(
                           "Kathmandu, Nepal",
                           style: TextStyle(
-                              fontSize: 20.0,
+                              fontSize: Constants.subtextsbelowdegreefontsize,
                               fontWeight: Constants.mainpagetitlefontweight),
                         ),
                       ],
@@ -100,11 +100,27 @@ class MainPageScreen extends StatelessWidget {
             Constants.horizontalspace,
             Row(children: [
               Constants.verticalspace,
-              Expanded(
-                  child: Container(
-                height: 190,
-                color: Colors.red,
-              )),
+              Column(
+                children: [
+                  Constants.verticalspace,
+                  Text(""),
+                  Text("11:00Am"),
+                  Text("11:00Am"),
+                  Text("11:00Am"),
+                  Text("11:00Am"),
+                  Text("11:00Am"),
+                  Text("11:00Am"),
+                  Text("11:00Am"),
+                ],
+              ),
+              ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 2,
+                  itemBuilder: (context, index) {
+                    return Column(
+                      children: [Text("Sunday")],
+                    );
+                  }),
               Constants.verticalspace,
             ])
           ],
