@@ -139,16 +139,87 @@ class MainPageScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              VerticalDivider(),
               Expanded(
                   flex: 3,
                   child: Container(
-                    height: 180,
-                    //width: 200,
-                    //color: Colors.lightBlue[900],
-                    child: ListView(shrinkWrap: true, children: [
-                      Text("Hello world"),
-                    ]),
-                  )),
+                      height: 180,
+                      //width: 200,
+                      //color: Colors.lightBlue[900],
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: days.length,
+                          physics: BouncingScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (context, index) {
+                            return Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  border: Border.all(color: Colors.black12),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8)),
+                                ),
+
+                                // height: 45,
+                                width: 110,
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      days[index],
+                                    ),
+                                    Divider(),
+                                    Expanded(
+                                      child: ListView(
+                                        physics: BouncingScrollPhysics(),
+                                        scrollDirection: Axis.vertical,
+                                        shrinkWrap: true,
+                                        children: [
+                                          Center(child: Text("11:00 - 12:00")),
+                                          Divider(),
+                                          Center(child: Text("11:00 - 12:00")),
+                                          Divider(),
+                                          Center(child: Text("11:00 - 12:00")),
+                                          Divider(),
+                                          Center(child: Text("11:00 - 12:00")),
+                                          Divider(),
+                                          Center(child: Text("11:00 - 12:00")),
+                                          Divider(),
+                                          Center(child: Text("11:00 - 12:00")),
+                                          Divider(),
+                                          Center(child: Text("11:00 - 12:00")),
+                                          Divider(),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            );
+                            // return Column(children: [
+                            //   Text(days[index]),
+                            //   Divider(),
+                            //   Divider(),
+
+                            //   // Expanded(
+                            //   //   child: Row(
+                            //   //     children: [
+                            //   //       Expanded(
+                            //   //         child: ListView(
+                            //   //           shrinkWrap: true,
+                            //   //           children: [
+                            //   //             Expanded(child: Text("Hello world"))
+                            //   //           ],
+                            //   //         ),
+                            //   //       ),
+                            //   //     ],
+                            //   //   ),
+                            //   // )
+                            // ]);
+                          }))),
               Constants.verticalspace,
             ])
             // Padding(
