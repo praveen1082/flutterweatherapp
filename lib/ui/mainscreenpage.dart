@@ -113,7 +113,7 @@ class MainPageScreen extends StatelessWidget {
                 child: Container(
                   //width: 60,
                   height: 180,
-                  color: Colors.amberAccent,
+                  // color: Colors.amberAccent,
                   child: ListView(
                     shrinkWrap: true,
                     physics: BouncingScrollPhysics(),
@@ -143,40 +143,11 @@ class MainPageScreen extends StatelessWidget {
                   flex: 3,
                   child: Container(
                     height: 180,
-                    color: Colors.lightBlue[900],
-                    child: Column(
-                      children: [
-                        Flexible(
-                          child: ListView.builder(
-                            shrinkWrap: true,
-                            physics: BouncingScrollPhysics(),
-                            scrollDirection: Axis.horizontal,
-                            itemCount: days.length,
-                            itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                                  Text("Hello world"),
-                                  Expanded(
-                                    child: ListView(
-                                      //shrinkWrap: true,
-                                      children: [
-                                        Text("Today"),
-                                        Text("Hello"),
-                                        Text("world"),
-                                        Text("Hello"),
-                                        Text("world"),
-                                        Text("Hello"),
-                                        Text("world")
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+                    //width: 200,
+                    //color: Colors.lightBlue[900],
+                    child: ListView(shrinkWrap: true, children: [
+                      Text("Hello world"),
+                    ]),
                   )),
               Constants.verticalspace,
             ])
