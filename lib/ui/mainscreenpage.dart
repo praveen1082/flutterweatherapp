@@ -106,7 +106,80 @@ class MainPageScreen extends StatelessWidget {
               ],
             ),
             Constants.horizontalspace,
-
+            Row(children: [
+              Constants.verticalspace,
+              Expanded(
+                flex: 1,
+                child: Container(
+                  //width: 60,
+                  height: 180,
+                  color: Colors.amberAccent,
+                  child: ListView(
+                    shrinkWrap: true,
+                    physics: BouncingScrollPhysics(),
+                    children: [
+                      //Constants.verticalspace,
+                      Center(child: Text("Time")),
+                      Divider(),
+                      Center(child: Text("11:00 - 12:00")),
+                      Divider(),
+                      Center(child: Text("11:00 - 12:00")),
+                      Divider(),
+                      Center(child: Text("11:00 - 12:00")),
+                      Divider(),
+                      Center(child: Text("11:00 - 12:00")),
+                      Divider(),
+                      Center(child: Text("11:00 - 12:00")),
+                      Divider(),
+                      Center(child: Text("11:00 - 12:00")),
+                      Divider(),
+                      Center(child: Text("11:00 - 12:00")),
+                      Divider(),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                  flex: 3,
+                  child: Container(
+                    height: 180,
+                    color: Colors.lightBlue[900],
+                    child: Column(
+                      children: [
+                        Flexible(
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            physics: BouncingScrollPhysics(),
+                            scrollDirection: Axis.horizontal,
+                            itemCount: days.length,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                children: [
+                                  Text("Hello world"),
+                                  Expanded(
+                                    child: ListView(
+                                      //shrinkWrap: true,
+                                      children: [
+                                        Text("Today"),
+                                        Text("Hello"),
+                                        Text("world"),
+                                        Text("Hello"),
+                                        Text("world"),
+                                        Text("Hello"),
+                                        Text("world")
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  )),
+              Constants.verticalspace,
+            ])
             // Padding(
             //   padding: const EdgeInsets.all(8.0),
             //   child: Container(
