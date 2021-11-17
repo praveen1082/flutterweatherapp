@@ -106,6 +106,8 @@ class MainPageScreen extends StatelessWidget {
               ],
             ),
             Constants.horizontalspace,
+            Constants.horizontalspace,
+            Constants.horizontalspace,
             Row(children: [
               Constants.verticalspace,
               Expanded(
@@ -114,27 +116,44 @@ class MainPageScreen extends StatelessWidget {
                   //width: 60,
                   height: 180,
                   // color: Colors.amberAccent,
-                  child: ListView(
-                    shrinkWrap: true,
-                    physics: BouncingScrollPhysics(),
+                  child: Column(
                     children: [
-                      //Constants.verticalspace,
-                      Center(child: Text("Time")),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Center(
+                                  child: Text(
+                            "Time",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ))),
+                        ],
+                      ),
                       Divider(),
-                      Center(child: Text("11:00 - 12:00")),
-                      Divider(),
-                      Center(child: Text("11:00 - 12:00")),
-                      Divider(),
-                      Center(child: Text("11:00 - 12:00")),
-                      Divider(),
-                      Center(child: Text("11:00 - 12:00")),
-                      Divider(),
-                      Center(child: Text("11:00 - 12:00")),
-                      Divider(),
-                      Center(child: Text("11:00 - 12:00")),
-                      Divider(),
-                      Center(child: Text("11:00 - 12:00")),
-                      Divider(),
+                      Expanded(
+                        child: ListView(
+                          shrinkWrap: true,
+                          physics: BouncingScrollPhysics(),
+                          children: [
+                            //Constants.verticalspace,
+
+                            Center(child: Text("11:00 - 12:00")),
+                            Divider(),
+                            Center(child: Text("11:00 - 12:00")),
+                            Divider(),
+                            Center(child: Text("11:00 - 12:00")),
+                            Divider(),
+                            Center(child: Text("11:00 - 12:00")),
+                            Divider(),
+                            Center(child: Text("11:00 - 12:00")),
+                            Divider(),
+                            Center(child: Text("11:00 - 12:00")),
+                            Divider(),
+                            Center(child: Text("11:00 - 12:00")),
+                            Divider(),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -168,8 +187,13 @@ class MainPageScreen extends StatelessWidget {
                                 width: 110,
                                 child: Column(
                                   children: [
-                                    Text(
-                                      days[index],
+                                    Center(
+                                      child: Text(
+                                        days[index],
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500),
+                                      ),
                                     ),
                                     Divider(),
                                     Expanded(
@@ -178,19 +202,19 @@ class MainPageScreen extends StatelessWidget {
                                         scrollDirection: Axis.vertical,
                                         shrinkWrap: true,
                                         children: [
-                                          Center(child: Text("11:00 - 12:00")),
+                                          Center(child: Text("26\u{00B0}C")),
                                           Divider(),
-                                          Center(child: Text("11:00 - 12:00")),
+                                          Center(child: Text("18\u{00B0}C")),
                                           Divider(),
-                                          Center(child: Text("11:00 - 12:00")),
+                                          Center(child: Text("11\u{00B0}C")),
                                           Divider(),
-                                          Center(child: Text("11:00 - 12:00")),
+                                          Center(child: Text("13\u{00B0}C")),
                                           Divider(),
-                                          Center(child: Text("11:00 - 12:00")),
+                                          Center(child: Text("25\u{00B0}C")),
                                           Divider(),
-                                          Center(child: Text("11:00 - 12:00")),
+                                          Center(child: Text("19\u{00B0}C")),
                                           Divider(),
-                                          Center(child: Text("11:00 - 12:00")),
+                                          Center(child: Text("24\u{00B0}C")),
                                           Divider(),
                                         ],
                                       ),
