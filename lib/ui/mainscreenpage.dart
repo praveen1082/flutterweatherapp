@@ -103,6 +103,7 @@ class MainPageScreen extends StatelessWidget {
             ),
             Constants.horizontalspace,
             Constants.horizontalspace,
+            Divider(),
             Constants.horizontalspace,
             Row(children: [
               Constants.verticalspace,
@@ -215,7 +216,24 @@ class MainPageScreen extends StatelessWidget {
                             );
                           }))),
               Constants.verticalspace,
-            ])
+            ]),
+            Constants.horizontalspace,
+            Divider(),
+            Constants.horizontalspace,
+            Row(
+              children: [
+                Constants.verticalspace,
+                Text(
+                  "Chances of rain",
+                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                )
+              ],
+            ),
+            Constants.horizontalspace,
+            Container(
+              height: 300,
+              color: Colors.green,
+            )
           ],
         ),
       ),
