@@ -32,7 +32,6 @@ class MainPageScreen extends StatelessWidget {
                 Expanded(
                   child: Text(Constants.mainpagetitle,
                       style: TextStyle(
-                          //color: Colors.white,
                           fontSize: Constants.mainpagetitlefontsize,
                           fontWeight: Constants.mainpagetitlefontweight)),
                 ),
@@ -41,13 +40,11 @@ class MainPageScreen extends StatelessWidget {
                 Icon(
                   Icons.refresh,
                   size: Constants.refreshiconsize,
-                  //color: Colors.white,
                 ),
                 Constants.verticalspace,
               ],
             ),
             Constants.divider,
-            // Constants.horizontalspace,
             Row(
               children: [
                 Constants.verticalspace,
@@ -71,7 +68,6 @@ class MainPageScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     height: 100,
-                    //color: Colors.amberAccent,
                     child: Column(
                       children: const [
                         Text(
@@ -113,9 +109,7 @@ class MainPageScreen extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Container(
-                  //width: 60,
                   height: 180,
-                  // color: Colors.amberAccent,
                   child: Column(
                     children: [
                       Row(
@@ -135,8 +129,6 @@ class MainPageScreen extends StatelessWidget {
                           shrinkWrap: true,
                           physics: BouncingScrollPhysics(),
                           children: [
-                            //Constants.verticalspace,
-
                             Center(child: Text("11:00 - 12:00")),
                             Divider(),
                             Center(child: Text("11:00 - 12:00")),
@@ -163,8 +155,6 @@ class MainPageScreen extends StatelessWidget {
                   flex: 3,
                   child: Container(
                       height: 180,
-                      //width: 200,
-                      //color: Colors.lightBlue[900],
                       child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           itemCount: days.length,
@@ -223,103 +213,9 @@ class MainPageScreen extends StatelessWidget {
                                 ),
                               ),
                             );
-                            // return Column(children: [
-                            //   Text(days[index]),
-                            //   Divider(),
-                            //   Divider(),
-
-                            //   // Expanded(
-                            //   //   child: Row(
-                            //   //     children: [
-                            //   //       Expanded(
-                            //   //         child: ListView(
-                            //   //           shrinkWrap: true,
-                            //   //           children: [
-                            //   //             Expanded(child: Text("Hello world"))
-                            //   //           ],
-                            //   //         ),
-                            //   //       ),
-                            //   //     ],
-                            //   //   ),
-                            //   // )
-                            // ]);
                           }))),
               Constants.verticalspace,
             ])
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Container(
-            //     padding: EdgeInsets.symmetric(vertical: 5.0),
-            //     decoration: BoxDecoration(
-            //       border: Border.all(color: Colors.black54),
-            //       borderRadius: BorderRadius.all(Radius.circular(8)),
-            //     ),
-            //     height: 180,
-            //     child: Row(children: [
-            //       Constants.verticalspace,
-            //       Expanded(
-            //         child: ListView(
-            //           shrinkWrap: true,
-            //           physics: BouncingScrollPhysics(),
-            //           children: [
-            //             //Constants.verticalspace,
-            //             Center(child: Text("Time")),
-            //             Divider(),
-            //             Center(child: Text("11:00 - 12:00")),
-            //             Divider(),
-            //             Center(child: Text("11:00 - 12:00")),
-            //             Divider(),
-            //             Center(child: Text("11:00 - 12:00")),
-            //             Divider(),
-            //             Center(child: Text("11:00 - 12:00")),
-            //             Divider(),
-            //             Center(child: Text("11:00 - 12:00")),
-            //             Divider(),
-            //             Center(child: Text("11:00 - 12:00")),
-            //             Divider(),
-            //             Center(child: Text("11:00 - 12:00")),
-            //             Divider(),
-            //           ],
-            //         ),
-            //       ),
-            //       VerticalDivider(),
-            //       Expanded(
-            //         child: ListView.builder(
-            //           physics: BouncingScrollPhysics(),
-            //           scrollDirection: Axis.horizontal,
-            //           shrinkWrap: true,
-            //           itemCount: days.length,
-            //           itemBuilder: (context, index) {
-            //             return ListView(
-            //               scrollDirection: Axis.vertical,
-            //               physics: NeverScrollableScrollPhysics(),
-            //               shrinkWrap: true,
-            //               children: [
-            //                 Text(days[index]),
-            //                 Divider(),
-            //                 Text("11:00Am"),
-            //                 Divider(),
-            //                 Text("11:00Am"),
-            //                 Divider(),
-            //                 Text("11:00Am"),
-            //                 Divider(),
-            //                 Text("11:00Am"),
-            //                 Divider(),
-            //                 Text("11:00Am"),
-            //                 Divider(),
-            //                 Text("11:00Am"),
-            //                 Divider(),
-            //                 Text("11:00Am"),
-            //                 Divider(),
-            //               ],
-            //             );
-            //           },
-            //         ),
-            //       ),
-            //       Constants.verticalspace,
-            //     ]),
-            //   ),
-            // )
           ],
         ),
       ),
