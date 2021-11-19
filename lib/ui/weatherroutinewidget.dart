@@ -11,6 +11,16 @@ class WeatherRoutine extends StatelessWidget {
     "Friday",
     "Saturday"
   ];
+  List<String> times = [
+    "11:00-12:00",
+    "11:00-12:00",
+    "11:00-12:00",
+    "11:00-12:00",
+    "11:00-12:00",
+    "11:00-12:00",
+    "11:00-12:00"
+  ];
+  List<double> temperaturevalues = [20, 20, 22, 33, 44, 55, 66];
 
   @override
   Widget build(BuildContext context) {
@@ -34,26 +44,16 @@ class WeatherRoutine extends StatelessWidget {
               ),
               Divider(),
               Expanded(
-                child: ListView(
-                  shrinkWrap: true,
-                  physics: BouncingScrollPhysics(),
-                  children: [
-                    Center(child: Text("11:00 - 12:00")),
-                    Divider(),
-                    Center(child: Text("11:00 - 12:00")),
-                    Divider(),
-                    Center(child: Text("11:00 - 12:00")),
-                    Divider(),
-                    Center(child: Text("11:00 - 12:00")),
-                    Divider(),
-                    Center(child: Text("11:00 - 12:00")),
-                    Divider(),
-                    Center(child: Text("11:00 - 12:00")),
-                    Divider(),
-                    Center(child: Text("11:00 - 12:00")),
-                    Divider(),
-                  ],
-                ),
+                child: ListView.separated(
+                    shrinkWrap: true,
+                    physics: BouncingScrollPhysics(),
+                    itemCount: times.length,
+                    separatorBuilder: (context, index) {
+                      return Divider();
+                    },
+                    itemBuilder: (context, index) {
+                      return Center(child: Text(times[index]));
+                    }),
               ),
             ],
           ),
@@ -93,27 +93,40 @@ class WeatherRoutine extends StatelessWidget {
                             ),
                             Divider(),
                             Expanded(
-                              child: ListView(
-                                physics: BouncingScrollPhysics(),
-                                scrollDirection: Axis.vertical,
-                                shrinkWrap: true,
-                                children: [
-                                  Center(child: Text("26\u{00B0}C")),
-                                  Divider(),
-                                  Center(child: Text("18\u{00B0}C")),
-                                  Divider(),
-                                  Center(child: Text("11\u{00B0}C")),
-                                  Divider(),
-                                  Center(child: Text("13\u{00B0}C")),
-                                  Divider(),
-                                  Center(child: Text("25\u{00B0}C")),
-                                  Divider(),
-                                  Center(child: Text("19\u{00B0}C")),
-                                  Divider(),
-                                  Center(child: Text("24\u{00B0}C")),
-                                  Divider(),
-                                ],
-                              ),
+                              child: ListView.separated(
+                                  physics: BouncingScrollPhysics(),
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.vertical,
+                                  itemCount: times.length,
+                                  separatorBuilder: (context, index) {
+                                    return Divider();
+                                  },
+                                  itemBuilder: (context, index) {
+                                    return Center(
+                                        child:
+                                            Text(times[index] + "\u{00B0}C"));
+                                  }),
+                              // child: ListView(
+                              //   physics: BouncingScrollPhysics(),
+                              //   scrollDirection: Axis.vertical,
+                              //   shrinkWrap: true,
+                              //   children: [
+                              //     Center(child: Text("26\u{00B0}C")),
+                              //     Divider(),
+                              //     Center(child: Text("18\u{00B0}C")),
+                              //     Divider(),
+                              //     Center(child: Text("11\u{00B0}C")),
+                              //     Divider(),
+                              //     Center(child: Text("13\u{00B0}C")),
+                              //     Divider(),
+                              //     Center(child: Text("25\u{00B0}C")),
+                              //     Divider(),
+                              //     Center(child: Text("19\u{00B0}C")),
+                              //     Divider(),
+                              //     Center(child: Text("24\u{00B0}C")),
+                              //     Divider(),
+                              //   ],
+                              // ),
                             )
                           ],
                         ),
