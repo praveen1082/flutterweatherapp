@@ -29,4 +29,6 @@ class Constants {
       EdgeInsets.symmetric(horizontal: 8.0);
   static const symmetricpaddinginsidecontainerhorizontal =
       EdgeInsets.symmetric(horizontal: 5.0);
+  static const weatherroutinetexttitletextstyle =
+      TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
 }

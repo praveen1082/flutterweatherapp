@@ -33,12 +33,12 @@ class WeatherRoutine extends StatelessWidget {
           child: Column(
             children: [
               Row(
-                children: [
+                children: const [
                   Expanded(
                       child: Center(
                           child: Text(
                     "Time",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    style: Constants.weatherroutinetexttitletextstyle,
                   ))),
                 ],
               ),
@@ -81,8 +81,8 @@ class WeatherRoutine extends StatelessWidget {
                             Center(
                               child: Text(
                                 days[index],
-                                style: TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w500),
+                                style:
+                                    Constants.weatherroutinetexttitletextstyle,
                               ),
                             ),
                             Divider(),
@@ -90,29 +90,7 @@ class WeatherRoutine extends StatelessWidget {
                                 child: RoutineWidgets(
                               caller: "temperature",
                               data: temperaturevalues,
-                            )
-                                // child: ListView(
-                                //   physics: BouncingScrollPhysics(),
-                                //   scrollDirection: Axis.vertical,
-                                //   shrinkWrap: true,
-                                //   children: [
-                                //     Center(child: Text("26\u{00B0}C")),
-                                //     Divider(),
-                                //     Center(child: Text("18\u{00B0}C")),
-                                //     Divider(),
-                                //     Center(child: Text("11\u{00B0}C")),
-                                //     Divider(),
-                                //     Center(child: Text("13\u{00B0}C")),
-                                //     Divider(),
-                                //     Center(child: Text("25\u{00B0}C")),
-                                //     Divider(),
-                                //     Center(child: Text("19\u{00B0}C")),
-                                //     Divider(),
-                                //     Center(child: Text("24\u{00B0}C")),
-                                //     Divider(),
-                                //   ],
-                                // ),
-                                )
+                            ))
                           ],
                         ),
                       ),
