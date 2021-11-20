@@ -44,17 +44,10 @@ class WeatherRoutine extends StatelessWidget {
               ),
               Divider(),
               Expanded(
-                child: ListView.separated(
-                    shrinkWrap: true,
-                    physics: BouncingScrollPhysics(),
-                    itemCount: times.length,
-                    separatorBuilder: (context, index) {
-                      return Divider();
-                    },
-                    itemBuilder: (context, index) {
-                      return Center(child: Text(times[index]));
-                    }),
-              ),
+                  child: RoutineWidgets(
+                caller: "time",
+                data: times,
+              )),
             ],
           ),
         ),
@@ -71,7 +64,8 @@ class WeatherRoutine extends StatelessWidget {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      padding:
+                          Constants.symmetricpaddingoutsidecontainerhorizontal,
                       child: Container(
                         padding: EdgeInsets.symmetric(horizontal: 5),
                         decoration: BoxDecoration(
@@ -93,41 +87,32 @@ class WeatherRoutine extends StatelessWidget {
                             ),
                             Divider(),
                             Expanded(
-                              child: ListView.separated(
-                                  physics: BouncingScrollPhysics(),
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  itemCount: times.length,
-                                  separatorBuilder: (context, index) {
-                                    return Divider();
-                                  },
-                                  itemBuilder: (context, index) {
-                                    return Center(
-                                        child:
-                                            Text(times[index] + "\u{00B0}C"));
-                                  }),
-                              // child: ListView(
-                              //   physics: BouncingScrollPhysics(),
-                              //   scrollDirection: Axis.vertical,
-                              //   shrinkWrap: true,
-                              //   children: [
-                              //     Center(child: Text("26\u{00B0}C")),
-                              //     Divider(),
-                              //     Center(child: Text("18\u{00B0}C")),
-                              //     Divider(),
-                              //     Center(child: Text("11\u{00B0}C")),
-                              //     Divider(),
-                              //     Center(child: Text("13\u{00B0}C")),
-                              //     Divider(),
-                              //     Center(child: Text("25\u{00B0}C")),
-                              //     Divider(),
-                              //     Center(child: Text("19\u{00B0}C")),
-                              //     Divider(),
-                              //     Center(child: Text("24\u{00B0}C")),
-                              //     Divider(),
-                              //   ],
-                              // ),
+                                child: RoutineWidgets(
+                              caller: "temperature",
+                              data: temperaturevalues,
                             )
+                                // child: ListView(
+                                //   physics: BouncingScrollPhysics(),
+                                //   scrollDirection: Axis.vertical,
+                                //   shrinkWrap: true,
+                                //   children: [
+                                //     Center(child: Text("26\u{00B0}C")),
+                                //     Divider(),
+                                //     Center(child: Text("18\u{00B0}C")),
+                                //     Divider(),
+                                //     Center(child: Text("11\u{00B0}C")),
+                                //     Divider(),
+                                //     Center(child: Text("13\u{00B0}C")),
+                                //     Divider(),
+                                //     Center(child: Text("25\u{00B0}C")),
+                                //     Divider(),
+                                //     Center(child: Text("19\u{00B0}C")),
+                                //     Divider(),
+                                //     Center(child: Text("24\u{00B0}C")),
+                                //     Divider(),
+                                //   ],
+                                // ),
+                                )
                           ],
                         ),
                       ),
@@ -135,5 +120,28 @@ class WeatherRoutine extends StatelessWidget {
                   }))),
       Constants.verticalspace,
     ]);
+  }
+}
+
+class RoutineWidgets extends StatelessWidget {
+  final caller;
+  final data;
+  const RoutineWidgets({Key? key, this.data, this.caller}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+        physics: BouncingScrollPhysics(),
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        itemCount: data.length,
+        separatorBuilder: (context, index) {
+          return Divider();
+        },
+        itemBuilder: (context, index) {
+          return Center(
+              child: Text(
+                  caller == "time" ? data[index] : data[index] + "\u{00B0}C"));
+        });
   }
 }
