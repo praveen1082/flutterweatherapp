@@ -42,7 +42,7 @@ class WeatherRoutine extends StatelessWidget {
                   ))),
                 ],
               ),
-              Divider(),
+              Constants.horizontaldivider,
               Expanded(
                   child: RoutineWidgets(
                 caller: "time",
@@ -64,37 +64,34 @@ class WeatherRoutine extends StatelessWidget {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return Padding(
-                      padding:
-                          Constants.symmetricpaddingoutsidecontainerhorizontal,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                        decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          border: Border.all(color: Colors.black12),
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
-                        ),
-
-                        // height: 45,
-                        width: 110,
-                        child: Column(
-                          children: [
-                            Center(
-                              child: Text(
-                                days[index],
-                                style:
-                                    Constants.weatherroutinetexttitletextstyle,
+                        padding: Constants
+                            .symmetricpaddingoutsidecontainerhorizontal,
+                        child: Container(
+                          padding: Constants
+                              .symmetricpaddinginsidecontainerhorizontal,
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              border: Border.all(color: Colors.black12),
+                              borderRadius: Constants.borderradius),
+                          width: 110,
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Text(
+                                  days[index],
+                                  style: Constants
+                                      .weatherroutinetexttitletextstyle,
+                                ),
                               ),
-                            ),
-                            Divider(),
-                            Expanded(
-                                child: RoutineWidgets(
-                              caller: "temperature",
-                              data: temperaturevalues,
-                            ))
-                          ],
-                        ),
-                      ),
-                    );
+                              Constants.horizontaldivider,
+                              Expanded(
+                                  child: RoutineWidgets(
+                                caller: "temperature",
+                                data: temperaturevalues,
+                              ))
+                            ],
+                          ),
+                        ));
                   }))),
       Constants.verticalspace,
     ]);

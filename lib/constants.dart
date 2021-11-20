@@ -31,4 +31,5 @@ class Constants {
       EdgeInsets.symmetric(horizontal: 5.0);
   static const weatherroutinetexttitletextstyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500);
+  static const horizontaldivider = Divider();
 }
