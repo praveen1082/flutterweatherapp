@@ -25,4 +25,8 @@ class Constants {
   static const weathericoncontainerheight = 120.0;
   static const degreetextfontsize = 34.0;
   static const subtextsbelowdegreefontsize = 20.0;
+  static const symmetricpaddingoutsidecontainerhorizontal =
+      EdgeInsets.symmetric(horizontal: 8.0);
+  static const symmetricpaddinginsidecontainerhorizontal =
+      EdgeInsets.symmetric(horizontal: 5.0);
 }
