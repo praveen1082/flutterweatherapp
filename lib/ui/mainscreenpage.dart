@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/constants.dart';
+import 'package:weatherapp/ui/chartwidget.dart';
 import 'package:weatherapp/ui/weatherroutinewidget.dart';
 import 'package:weatherapp/ui/weatherwidget.dart';
 
@@ -70,15 +71,20 @@ class MainPageScreen extends StatelessWidget {
                 Constants.verticalspace,
                 Text(
                   "Chances of rain",
-                  style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w500),
+                  style: Constants.subheadingtextstyle,
                 )
               ],
             ),
             Constants.horizontalspace,
-            Container(
-              height: 300,
-              color: Colors.green,
+            Padding(
+              padding: Constants.symmetricpaddingoutsidecontainerhorizontal,
+              child: Container(
+                height: 200,
+                // color: Colors.blue,
+                child: ChartWidget(),
+              ),
             )
+            // Container(color: Colors.green, height: 100, child: ChartWidget()),
           ],
         ),
       ),

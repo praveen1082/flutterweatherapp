@@ -115,8 +115,9 @@ class RoutineWidgets extends StatelessWidget {
         },
         itemBuilder: (context, index) {
           return Center(
-              child: Text(
-                  caller == "time" ? data[index] : data[index] + "\u{00B0}C"));
+              child: Text(caller == "time"
+                  ? "${data[index]}"
+                  : data[index].toString() + "\u{00B0}C"));
         });
   }
 }
