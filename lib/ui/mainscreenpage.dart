@@ -76,9 +76,11 @@ class MainPageScreen extends StatelessWidget {
               ],
             ),
             Constants.horizontalspace,
+            Constants.horizontalspace,
             Padding(
               padding: Constants.symmetricpaddingoutsidecontainerhorizontal,
               child: Container(
+                padding: Constants.symmetricpaddinginsidecontainerhorizontal,
                 height: 200,
                 // color: Colors.blue,
                 child: ChartWidget(),

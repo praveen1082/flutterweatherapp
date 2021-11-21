@@ -34,6 +34,7 @@ class ChartWidget extends StatelessWidget {
               FlSpot(3, 0),
               FlSpot(4, 1),
               FlSpot(5, 2),
+              FlSpot(6, 1)
             ])
           ]),
     );
